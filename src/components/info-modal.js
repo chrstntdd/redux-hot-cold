@@ -1,13 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { toggleModal } from '../actions/index';
 
 import './info-modal.css';
 
-export default class InfoModal extends React.Component {
-  onClose(event) {
-    event.preventDefault();
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
+export class InfoModal extends React.Component {
+  toggleModal(e) {
+    e.preventDefault();
+    this.props.dispatch(toggleModal());
   }
 
   render() {
@@ -35,7 +36,7 @@ export default class InfoModal extends React.Component {
               </li>
             </ul>
             <p>So, Are you ready?</p>
-            <a className="close" href="#" onClick={e => this.onClose(e)}>
+            <a className="close" href="#" onClick={e => this.toggleModal(e)}>
               Got It!
             </a>
           </div>
@@ -44,3 +45,5 @@ export default class InfoModal extends React.Component {
     );
   }
 }
+
+export default connect()(InfoModal);
