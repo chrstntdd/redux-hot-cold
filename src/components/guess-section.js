@@ -11,7 +11,7 @@ export function GuessSection(props) {
       <h2 id="feedback">
         {props.feedback}
       </h2>
-      <GuessForm onGuess={props.onGuess} />
+      <GuessForm />
     </section>
   );
 }

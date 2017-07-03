@@ -4,7 +4,7 @@ import { startNewGame, toggleModal } from '../actions/index';
 import './top-nav.css';
 
 export class TopNav extends React.Component {
-  startNewGame(e) {
+  newGame(e) {
     e.preventDefault();
     this.props.dispatch(startNewGame());
   }
@@ -24,7 +24,7 @@ export class TopNav extends React.Component {
             </a>
           </li>
           <li>
-            <a className="new" href="#" onClick={e => this.startNewGame(e)}>
+            <a className="new" href="#" onClick={e => this.newGame(e)}>
               + New Game
             </a>
           </li>
